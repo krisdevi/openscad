@@ -1,3 +1,4 @@
+/*inner hull of a 3 way electrical outlet-*/
 difference(){
 cube([102,68,63],center=true);
 translate([4,0,0]) cube([102.1,60,60],center=true);
