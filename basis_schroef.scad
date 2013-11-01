@@ -1,4 +1,5 @@
-x= 10;
+x= 10; // testing on site
+
 module bolt(){
   translate([0,0,x])cylinder(x,x*2,x*2);
   cylinder(x,0,x*2);
