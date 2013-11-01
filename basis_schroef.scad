@@ -1,6 +1,7 @@
 x= 10; // testing on giteye
 
 // lijn toegevoegd uit openscad
+// lijn via remote add
 
 module bolt(){
   translate([0,0,x])cylinder(x,x*2,x*2);
