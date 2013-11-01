@@ -1,9 +1,5 @@
-x= 10; // testing on giteye
-
-// lijn toegevoegd uit openscad
-// lijn via remote add
-// yeah i'm that bad-ass :-)
-
+x= 10;
+//mijn comment nu
 
 module bolt(){
   translate([0,0,x])cylinder(x,x*2,x*2);
@@ -23,3 +19,4 @@ intersection(){
   thread();
   bolt();
 }
+polygon(
