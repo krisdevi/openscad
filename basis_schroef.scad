@@ -1,4 +1,4 @@
-x= 10; // testing on site
+x= 10; // testing on giteye
 
 module bolt(){
   translate([0,0,x])cylinder(x,x*2,x*2);
