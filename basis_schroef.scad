@@ -1,6 +1,6 @@
-x= 10;
-//mijn comment nu
+/* custom screw and nut */
 
+x= 15;
 module bolt(){
   translate([0,0,x])cylinder(x*3,x*2,x*2);
   cylinder(x,0,x*2);
@@ -16,15 +16,24 @@ module hexagon(){
 }
 
 module thread() {
-   translate([0,0,x])linear_extrude(height = 6*x, center = true, convexity = 20, twist = -8000) start_thing();
+   translate([0,0,x])linear_extrude(height = 6*x, center = true, convexity = 20, twist = 60*-100) start_thing();
 }
 
-
-union(){
-   intersection(){
-     thread();
-     bolt();
+module screw(){
+   union(){
+      intersection(){
+        thread();
+        bolt();
+      }
+      translate([0,0,x*4.4])linear_extrude(height = 8, center = true) hexagon();
    }
-   translate([0,0,x*4.4])linear_extrude(height = 8, center = true) hexagon();
 }
 
+module nut(){
+   difference(){
+      linear_extrude(height = 8, center = true) hexagon();
+      thread();
+   }
+}
+screw();
+translate([0,0,-4])nut();
