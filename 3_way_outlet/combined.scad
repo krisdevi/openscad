@@ -1,7 +1,7 @@
 // 	combine it all
 
 use <faceplate.scad>;
-use <inner-hull.scad>;
+use <inner_hull.scad>;
 use <outer_hull.scad>;
 
 module combined_inner() {
