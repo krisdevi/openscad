@@ -12,16 +12,16 @@ module combined_inner() {
 }
 
 module outlet(pos) {
-	if (pos == close) {
+	if (pos == 2) {
 		combined_inner();
-		translate([0,0,0]) outer_hull();
+		translate([30,0,0]) rotate([0,0,180]) outer_hull();
 		}	
-	if (pos == open) {
+	if (pos == 1) {
 		combined_inner();
-		translate([90,0,0]) outer_hull();
+		translate([90,0,0]) rotate([0,0,180]) outer_hull();
 		}
 }
 
-outlet(open);
-//outlet(close);
+outlet(1); // 1: open
+//outlet(2); // 2: close
 
