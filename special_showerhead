@@ -1,0 +1,40 @@
+//special showerhead
+x = 10;
+
+module start_thing() {
+  translate([x/10,0,0]) circle(x*9/10);
+}
+
+module thread() {
+   linear_extrude(height = 11, center = true, convexity = 20, twist = 5*-360) start_thing();
+}
+
+module Shower_coupling(){
+   difference(){
+      union() {
+         translate([0,0,5.5])thread();
+         translate([0,0,11])cylinder(2.5,9,9);
+      }
+      translate([0,0,-0.1])cylinder(13.7,7,7);
+   } 
+}
+
+module no_name(){
+   difference(){
+      union(){
+         translate([0,0,110])sphere(12.5);
+         translate([0,0,0])cylinder(110,12.5,12.5);
+      }
+      union(){
+         translate([0,0,3])  cylinder(107.1,10,10);
+         translate([0,0,-0.1])cylinder(3.2,7,7);
+         translate([0,0,110])sphere(10);
+         translate([0,0,119])cylinder(4,3,3);
+     }
+   }
+}
+
+
+
+Shower_coupling();
+translate([0,0,13.5])no_name();
